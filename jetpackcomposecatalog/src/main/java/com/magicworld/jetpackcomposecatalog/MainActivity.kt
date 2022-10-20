@@ -1,7 +1,6 @@
 package com.magicworld.jetpackcomposecatalog
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
@@ -30,6 +29,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    MyBasicSlider()
                     //val myOptions = getOptions(titles = listOf("numero 1", "numero 2", "numero 3"))
                     /*Column {
                         myOptions.forEach { checkInfo ->
@@ -41,17 +41,25 @@ class MainActivity : ComponentActivity() {
                     MyTextField( myText ) {myText = it}*/
                     /*var selected by rememberSaveable { mutableStateOf("kevin") }
                     MyRadioButtonList(selected){selected = it}*/
-                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    /*Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         var show by rememberSaveable { mutableStateOf(false) }
 
                         Button(onClick = { show = true }) {
                             Text(text = "Mostar Dialogo")
                         }
-                        MyDialog(
+                        MyConfirmationDialog(
                             show = show,
-                            onDismiss = { show = false },
-                            onComfirm = { Log.i("kevin", "click") })
+                            onDismiss = { show = false })
+                        //onComfirm = { Log.i("kevin", "click") })
+                    }*/
+                    /*var show by rememberSaveable { mutableStateOf(false) }
+                    Button(onClick = { show = true }) {
+                        Text(text = "Mostar Dialogo")
                     }
+                    MyAlertDialog(show = show , onDismiss = { show = false }) {
+
+                    }*/
+
                 }
             }
         }
@@ -62,7 +70,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     MyNewAppComposeTheme {
-        MyDivider()
+        MyIconButton()
     }
 }
 

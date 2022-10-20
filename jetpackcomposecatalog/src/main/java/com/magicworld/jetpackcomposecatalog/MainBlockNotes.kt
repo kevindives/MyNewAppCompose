@@ -25,11 +25,14 @@ fun MyBlockNote() {
                 Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                label = { Text("Title") },
+                placeholder = { Text("Title") },
+                maxLines = 1,
+                singleLine = true,
                 colors = TextFieldDefaults.textFieldColors(
+                    placeholderColor= Color(0xFFB2B2B2),
                     backgroundColor = Color.White,
-                    focusedIndicatorColor = Color.White,
-                    unfocusedIndicatorColor = Color.White,
+                    focusedIndicatorColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.Transparent,
 
                     )
             )
@@ -39,8 +42,9 @@ fun MyBlockNote() {
                 Modifier
                     .fillMaxWidth()
                     .weight(9f),
-                label = { Text("Note") },
+                placeholder = { Text("Note") },
                 colors = TextFieldDefaults.textFieldColors(
+                    placeholderColor= Color(0xFFB2B2B2),
                     backgroundColor = Color.White,
                     focusedIndicatorColor = Color.White,
                     unfocusedIndicatorColor = Color.White
